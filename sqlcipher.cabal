@@ -1,12 +1,13 @@
+cabal-version:   3.6
 Name:            sqlcipher
-Version:         1.0.1.2
+Version:         1.0.1.3
 Synopsis:        Haskell binding to sqlcipher
 Description:
     Haskell binding to sqlcipher <https://www.zetetic.net/sqlcipher/>.
 
     This was forked from sqlite3 library from Galois, Inc. since sqlcipher share most of its API.
     .
-License:         BSD3
+License:         BSD-3-Clause
 License-file:    LICENSE
 Author:          figo GmbH
 Maintainer:      figo GmbH <package+haskell@figo.io>
@@ -15,7 +16,6 @@ Copyright:
   Copyright (c) 2016, figo GmbH
 Homepage:        http://github.com/figome/haskell-sqlcipher
 Category:        Database
-cabal-version: >= 1.23
 build-type:      Custom
 
 -- Cheating here, including the tests/ .cabal +
@@ -47,7 +47,7 @@ library
   if flag(builtin-sqlcipher)
     Include-dirs:    sqlcipher
     Includes:        sqlite3.h
-    C-Sources:       sqlcipher/sqlite3.c
+    C-Sources:       sqlite3.c
     Extra-Libraries: crypto
   else
     Extra-Libraries: sqlcipher crypto
@@ -56,7 +56,7 @@ library
     Database.SQLCipher,
     Database.SQLCipher.Base,
     Database.SQLCipher.Types,
-    Database.SQL
+    Database.SQL,
     Database.SQL.Types
 
 

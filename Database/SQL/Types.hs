@@ -479,7 +479,7 @@ ppSQLExpr e =
       BinSQLExpr op e1 e2 -> ppSQLExpr e1 <+> text op <+> ppSQLExpr e2
       PrefixSQLExpr op e1 -> text op <+> ppSQLExpr e1
       PostfixSQLExpr op e1-> ppSQLExpr e1 <+> text op
-      FunSQLExpr f es     -> text f <> parens (commaH ppSQLExpr es)
+      FunSQLExpr f es     -> text f Text.PrettyPrint.HughesPJ.<> parens (commaH ppSQLExpr es)
       ConstSQLExpr c      -> text c
       CaseSQLExpr cs el   -> text "CASE" <+> vcat (map ppWhen cs)
                              <+> text "ELSE" <+> ppSQLExpr el <+> text "END"

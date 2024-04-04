@@ -13,7 +13,10 @@ type PreSDistHook = (Args -> SDistFlags -> IO HookedBuildInfo)
 
 
 updatePreSDistHook :: (PreSDistHook -> PreSDistHook) -> UserHooks -> UserHooks
-updatePreSDistHook update hooks@UserHooks{ preSDist = old }  = hooks { preSDist = update old }
+updatePreSDistHook update hooks = hooks
+
+-- updatePreSDistHook :: (PreSDistHook -> PreSDistHook) -> UserHooks -> UserHooks
+-- updatePreSDistHook update hooks@UserHooks{ preSDist = old }  = hooks { preSDist = update old }
 
 
 configureSQLCipher :: PreSDistHook -> PreSDistHook
