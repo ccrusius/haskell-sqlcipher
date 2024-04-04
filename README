@@ -1,0 +1,14 @@
+SQLCipher bindings for Haskell
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This is a fork of http://github.com/figome/haskell-sqlcipher.
+
+This is a fork of https://github.com/GaloisInc/sqlite with added functionality
+for SQLCipher[1]. The following SQLCipher specific functions are available:
+
+  * sqlite3_key
+  * sqlite3_key_v2
+  * sqlite3_rekey
+  * sqlite3_rekey_v2
+
+[1] https://www.zetetic.net/sqlcipher/sqlcipher-api/
